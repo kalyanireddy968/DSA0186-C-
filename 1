@@ -1,0 +1,25 @@
+#include <iostream>
+
+// Function to convert uppercase to lowercase and vice versa
+char swapCase(char c) {
+    if (c >= 'A' && c <= 'Z') {
+        return c + 32; // Convert uppercase to lowercase
+    } else if (c >= 'a' && c <= 'z') {
+        return c - 32; // Convert lowercase to uppercase
+    }
+    return c; // Return unchanged if not a letter
+}
+
+int main() {
+    std::string input;
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, input);
+
+    for (char& c : input) {
+        c = swapCase(c);
+    }
+
+    std::cout << "Result: " << input << std::endl;
+
+    return 0;
+}
